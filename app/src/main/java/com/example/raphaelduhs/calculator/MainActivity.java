@@ -1,5 +1,6 @@
 package com.example.raphaelduhs.calculator;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,17 +18,48 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculate (View view) {
 
+
         EditText val1 = (EditText) findViewById(R.id.valueOne);
         EditText val2 = (EditText) findViewById(R.id.valueTwo);
 
         TextView result = (TextView) findViewById(R.id.result);
+        TextView dividend = (TextView) findViewById(R.id.Dividend);
+        TextView divisor = (TextView) findViewById(R.id.Divisor);
 
-       double numb1 = Double.parseDouble(val1.getText().toString());
-       double numb2 = Double.parseDouble(val2.getText().toString());
 
-        double solution = numb1 / numb2;
+        // prüft ob der erste Wert leer ist
+        if (val1.getText().length() == 0) {
+            result.setText("Bitte Dividend eintragen!");
+            dividend.setTextColor(Color.RED);
 
-        result.setText("Resultat = "+ solution);
+            if (val2.getText().length() == 0) {
+
+                result.setText("Bitte Dividend und Divisor eintragen!");
+                divisor.setTextColor(Color.RED);}
+
+            // prüft ob der zweite Wert leer ist
+        } else if (val2.getText().length() == 0) {
+
+            dividend.setTextColor(Color.BLACK);
+            result.setText("Bitte Divisor eintragen!");
+            divisor.setTextColor(Color.RED);
+
+         // wenn die Werte passen führe Berechnung aus !
+        } else {
+
+            dividend.setTextColor(Color.BLACK);
+            divisor.setTextColor(Color.BLACK);
+            double numb1 = Double.parseDouble(val1.getText().toString());
+            double numb2 = Double.parseDouble(val2.getText().toString());
+            System.out.println(numb1);
+            System.out.println(numb2);
+            double solution = numb1 / numb2;
+            result.setText("Resultat = "+ solution);
+            result.setTextSize(25f);
+            }
+
+
+
 
 
 
