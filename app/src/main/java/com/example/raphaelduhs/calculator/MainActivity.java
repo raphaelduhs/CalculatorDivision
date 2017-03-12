@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             result.setText("Bitte Divisor eintragen!");
             divisor.setTextColor(Color.RED);
 
-         // wenn die Werte passen führe Berechnung aus
+         // wenn die passenden Werte da sind führe Berechnung aus
         } else {
 
             dividend.setTextColor(Color.BLACK);
