@@ -47,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
          // wenn die passenden Werte da sind führe Berechnung aus
         } else {
 
+            // prüft ob der Divisor 0 ist
+            if (Double.parseDouble(val2.getText().toString()) == 0 ) {
+                result.setText("Achtung Division durch 0 nicht möglich!");
+
+            }
+            else {
+
             dividend.setTextColor(Color.BLACK);
             divisor.setTextColor(Color.BLACK);
             double numb1 = Double.parseDouble(val1.getText().toString());
@@ -55,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(numb2);
             double solution = numb1 / numb2;
             result.setText("Resultat = "+ solution);
-            result.setTextSize(25f);
+            result.setTextSize(25f);}
+
             }
 
 
